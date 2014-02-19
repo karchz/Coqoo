@@ -213,7 +213,7 @@
 
 
 <p class="text-center"><i class="fa fa-arrow-up fa-3x"></i></p>
-<h3 class="text-center" style="margin-top:0px;"> Click Icons ! </h3>
+<h6 class="text-center" style="margin-top:0px;"> Click Icons ! </h6>
 
 
 ## Font Awesome
@@ -592,7 +592,7 @@
 
 
 <p class="text-center"><i class="fa fa-arrow-up fa-3x"></i></p>
-<h3 class="text-center" style="margin-top:0px;"> Click Icons ! </h3>
+<h6 class="text-center" style="margin-top:0px;"> Click Icons ! </h6>
 
 
 
