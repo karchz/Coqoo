@@ -651,16 +651,16 @@
 			}
 		);
 		$(".markdown").find("i").click(function(){
-			var name = $(this).attr('class').replace('fa fa-','').replace(' fa-lg','');
-			var classname = $(this).attr('class').replace(' fa-lg','');
+			var name = $(this).attr('class').replace('fa fa-','').replace(' fa-lg','').replace(' fa-3x','');
+			var classname = $(this).attr('class').replace(' fa-lg','').replace(' fa-3x','');
 			modalbody = '<span class="'+classname+'"></span> '+'[('+name+')]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-spin"></span> '+'[('+name+',spin)]<br /><span class="'+classname+' fa-lg"></span> '+'[('+name+',lg)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-lg fa-spin"></span> '+'[('+name+',lg,spin)]<br /><span class="'+classname+' fa-2x"></span> '+'[('+name+',2x)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-2x fa-spin"></span> '+'[('+name+',2x,spin)]<br /><span class="'+classname+' fa-3x"></span> '+'[('+name+',3x)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-3x fa-spin"></span> '+'[('+name+',3x,spin)]<br /><span class="'+classname+' fa-4x"></span> '+'[('+name+',4x)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-4x fa-spin"></span> '+'[('+name+',4x,spin)]<br /><span class="'+classname+' fa-5x"></span> '+'[('+name+',5x)]&nbsp;&nbsp;&nbsp;&nbsp;<span class="'+classname+' fa-5x fa-spin"></span> '+'[('+name+',5x,spin)]'
 
 			show_modal('Bootstrap Glyphiton ' + name,modalbody);
 		});
 
 		$(".markdown").find("span").click(function(){
-			var name = $(this).attr('class').replace('glyphicon glyphicon-','').replace(' fa-lg','');
-			var classname = $(this).attr('class').replace(' fa-lg','');
+			var name = $(this).attr('class').replace('glyphicon glyphicon-','').replace(' fa-lg','').replace(' fa-3x','');
+			var classname = $(this).attr('class').replace(' fa-lg','').replace(' fa-3x','');
 			modalbody = '<p class="alert alert-warning">If use spin &amp; lg &amp; 2x &amp; 3x &amp; 4x &amp; 5x Options , Require FontAwesome<p><i class="'+classname+'"></i> '+':('+name+'):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-spin"></i> '+':('+name+',spin):<br /><i class="'+classname+' fa-lg"></i> '+':('+name+',lg):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-lg fa-spin"></i> '+':('+name+',lg,spin):<br /><i class="'+classname+' fa-2x"></i> '+':('+name+',2x):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-2x fa-spin"></i> '+':('+name+',2x,spin):<br /><i class="'+classname+' fa-3x"></i> '+':('+name+',3x):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-3x fa-spin"></i> '+':('+name+',3x,spin):<br /><i class="'+classname+' fa-4x"></i> '+':('+name+',4x):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-4x fa-spin"></i> '+':('+name+',4x,spin):<br /><i class="'+classname+' fa-5x"></i> '+':('+name+',5x):&nbsp;&nbsp;&nbsp;&nbsp;<i class="'+classname+' fa-5x fa-spin"></i> '+':('+name+',5x,spin):'
 			
 			show_modal('Font Awesome ' + name,modalbody);
