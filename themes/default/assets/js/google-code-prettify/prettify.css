@@ -1,0 +1,156 @@
+a {
+	-moz-transition: color 0.3s ease 0s;	
+	-webkit-transition: color 0.3s ease 0s;	
+	-o-transition: color 0.3s ease 0s;	
+	-ms-transition: color 0.3s ease 0s;
+}
+
+a:hover {
+	color: #0181EB;
+}
+
+body {
+	background-color: #DDDDDD;
+	background-image: url("../images/pattern-4.png");
+	background-repeat: repeat;	
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 	
+	min-height: 100%;
+	padding-top: 0 !important;
+	//padding-top: 90px;
+    //padding-bottom: 40px;
+}
+
+figure.code {
+	background: none repeat scroll 0 0 transparent;
+	margin: auto 0;
+}
+
+figure.code figcaption {
+	background: url("../images/code_bg.png?1320899905") repeat-x scroll center top #AAAAAA;
+	border-color: #CBCBCB #A5A5A5 -moz-use-text-color;
+	border-style: solid solid none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-width: 1px 1px 0;
+	color: #474747;
+	font-family: "Helvetica Neue",Arial,"Lucida Grande","Lucida Sans Unicode",Lucida,sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 2em;
+	margin-bottom: -1px;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #CBCCCC;
+}
+
+section {
+	padding-top: 50px;
+	//opacity: 0.9;
+}
+
+pre.prettyprint {
+	margin-bottom: inherit;
+	font-size: 16px;	
+}
+
+body > div.container {
+	background-color: rgba(255,255,255,0.5);
+	padding: 20px;
+	padding-top: 100px;
+	padding-bottom: 20px;
+	margin-bottom: 550px;	
+}
+
+#steps h2 {
+	margin-top:  20px;
+	margin-bottom: 10px;	
+}
+
+#steps div,
+#examples div {
+	font-size: 20px;
+	line-height: 28px;
+}
+
+#steps pre,
+#examples pre {
+}
+
+#steps pre:hover {
+	//opacity: 0.9;
+}
+
+#steps .label,
+#examples .label {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.banner pre.prettyprint {
+	//border-radius: 5px 5px 5px 5px;
+	margin-bottom: 0;
+}
+
+.bs-links {
+	background-color: rgba(255,255,255,0.5);
+	padding: 5px;
+	padding-bottom: 10px;
+}
+
+.code-language {
+	padding-top: 100px;
+}
+
+.code-wrapper {
+	//background-color: #ED145B;
+	background-color: #0088CC;
+	margin: 0 -40px;
+	padding: 10px 40px;
+}
+
+.footer {
+	padding-bottom: 20px;
+}
+
+.jumbotron p {
+	margin-bottom: 50px;	
+}
+
+.like-btn {
+	position: relative;
+	top: 5px;	
+}
+
+.masthead small {
+	display: block;
+	padding: 20px;
+}
+
+.masthead .btn-primary small {
+	color: #FFFFFF;
+	display: inline-block;
+	padding: 5px;
+	padding-left: 10px;
+	vertical-align: text-top;
+}
+
+.navbar .nav > li > a {
+	font-size: 20px;
+}
+
+.page-header {
+	//margin: inherit;
+	padding-bottom: 10px;	
+}
+
+.page-header p {
+	font-size: 1.2em;
+}
+
+.section-inner {
+	margin: 20px;
+}
+
+.tweet-btn iframe {
+	width: 80px !important;
+}

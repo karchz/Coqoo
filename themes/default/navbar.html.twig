@@ -1,0 +1,64 @@
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="{{ base_url }}">{{ config.header_title }}</a>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="header-navbar">
+	<ul class="nav navbar-nav">
+		<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown">スタートアップ <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				{% for item in all_pages %}
+					{% if item.category == "Startup" %}
+						<li><a href="{{item.url}}">{{item.title}}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</li>
+		{# <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tags <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="{{ base_url }}/tag/php">php</a></li>
+				<li><a href="{{ base_url }}/tag/pico">pico</a></li>
+			</ul>
+		</li> #}
+		<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown">サンプル <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="{{ base_url }}/posts/Markdown/MarkdownSample">マークダウンのサンプル</a></li>
+				<li><a href="{{ base_url }}/posts/Markdown/BootstrapGlyphicons&amp;FontAwesome">アイコンチートシート</a></li>
+
+				<li><a href="{{ base_url }}/pages/one_column">固定ページ(1カラムテンプレート)</a></li>
+			</ul>
+		</li>
+		<li><a href="{{ base_url }}/sitemap.xml" target="_blank">SiteMap.xml</a></li>
+		
+	</ul>
+	<div class="col-md-4 col-sm-5 hidden-sm hidden-xs navbar-right">
+		<form class="navbar-form navbar-left" id="tagSearch" role="search">
+			<div class="input-group">
+				<input type="text" class="form-control pull-left" id="tags" placeholder="Search Tags" >
+				<span class="input-group-btn pull-left">
+					<button type="submit" class="btn btn-default">Submit</button>
+				</span>
+			</div>
+		</form>
+	</div>
+	<div class="social-icons nav pull-right">
+		<a href="https://twitter.com/GeeksDev" title="twitter" target="_blank">
+			<i class="fa fa-3x fa-twitter-square"></i>
+		</a>
+		<a href="https://github.com/geeks-dev" title="github" target="_blank">
+			<i class="fa fa-3x  fa-github-square"></i></a>
+		<a href="{{ base_url }}/feed" title="rss" target="_blank">
+			<i class="fa fa-3x  fa-rss-square"></i>
+		</a>
+	</div>
+</div>

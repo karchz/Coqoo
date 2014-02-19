@@ -1,0 +1,91 @@
+{% extends 'index.html.twig' %}
+{% block header %}
+<div class="bs-header">
+	<div class="container">
+		<h1>{{ config.header_title }} </h1>
+		<p>is Fast Markdown CMS</p>
+	</div>
+</div>
+<div class="container">
+	<ol class="breadcrumb">
+		<li><a href="{{base_url}}">Home</a></li>
+		{% if meta.category %}
+		<li><a href="{{base_url}}/category/{{meta.category}}">{{ config.category_prefix }}{{meta.category}}</a></li>
+		{% endif %}
+		<li class="active">{{meta.title}}</li>
+	</ol>
+</div>
+{% endblock %}
+
+{% block container %}
+	<div class="col-md-8">
+		<section id="content">
+			{% if is_front_page %} <!-- Front page lists all blog posts -->
+				{% for page in pages %}
+					<br />
+					<article class="post-list">
+						<div class="row">
+							<h3 class="col-xs-12">
+								<a href="{{ page.url }}" class="link">{{ page.title }}</a>
+							</h3>
+							{% if page.thumbnail %}
+								<div class="col-md-4 col-sm-12 col-xs-12">
+									<a href="{{ page.url }}" class="thumbnail"><img src="{{page.thumbnail}}" class="img-responsive" /></a>
+								</div>
+							{% endif %}
+							<div class="col-md-{% if page.thumbnail %}8{% else %}12{% endif %} col-sm-12 col-xs-12">
+								<!-- link to page -->
+								<span><i class="glyphicon glyphicon-calendar"></i> {{page.date}} </span>&nbsp;&nbsp;
+								{% if page.category %}
+									<span><i class="glyphicon glyphicon-flag"></i> <a href="{{ base_url }}/category/{{page.category}}">{{page.category}}</a></span>
+								{% endif %}
+								{% if page.tags %}
+								<div class="tags">
+									<span class="glyphicon glyphicon-tags"></span>&nbsp;
+									<!-- display page tags with proper urls -->
+									{% for tag in page.tags %}
+										<a href="{{ base_url }}/tag/{{ tag }}">{{ config.tag_prefix }}{{ tag }}</a>
+									{% endfor %}
+								</div>
+								{% endif %}
+								<hr class="dashed" />
+								<p>
+									{{ page.excerpt }}
+								</p>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</article>
+					<hr />
+				{% endfor %}
+					{% if is_page %}
+						<div class="col-xs-12 text-center">
+							<ul class="pagination">
+								{% if prev_page %}
+									<li><a href="{{ prev_page }}">&laquo;</a></li>
+								{% else %}
+									<li class="disabled"><a>&laquo;</a></li>
+								{% endif %}
+								{% for p in page_list %}
+									<li{% if p.num == current_page_num %} class="active"{% endif %}>
+										<a href="{{ p.link }}">{{ p.num }}</a>
+									</li>
+								{% endfor %}
+								{% if next_page %}
+									<li><a href="{{ next_page }}">&raquo;</a></li>
+								{% else %}
+									<li class="disabled"><a>&raquo;</a></li>
+								{% endif %}
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					{% endif %}
+			{% else %} <!-- Single page shows individual blog post -->
+				{% include "article.html.twig" %}
+			{% endif %}
+		</section>
+	</div>
+	<div id="sidebar" class="col-md-4 hidden-print">
+		{% include "sidebar.html.twig" %}
+	</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+	{% include "meta.html.twig" %}
+	<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+	{% include "link.html.twig" %}
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="{{ theme_url }}/assets/js/bootstrap/html5shiv.js"></script>
+	<script src="{{ theme_url }}/assets/js/bootstrap/respond.min.js"></script>
+<![endif]-->
+<script src="{{ theme_url }}/assets/js/jquery.min.js"></script>
+</head>
+<body {% if not config.navbar_fix %}style="padding-top:0px;"{% endif %}>
+	<header id="header" class="hidden-print">
+		<div class="container">
+			<nav class="navbar navbar-default navbar-{% if config.navbar_fix %}fixed{% else %}static{% endif %}-top" role="navigation">
+				<div class="{% if config.navbar_fix %}container{% endif %}">
+					{% include "navbar.html.twig" %}
+				</div>
+			</nav>
+		</div>
+		<div class="bs-header">
+			<div class="container">
+				<h1>{{ config.header_title }} </h1>
+				<p>is Fast Markdown CMS</p>
+			</div>
+		</div>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="{{base_url}}">Home</a></li>
+				{% if meta.category %}
+				<li><a href="{{base_url}}/category/{{meta.category}}">{{ config.category_prefix }}{{meta.category}}</a></li>
+				{% endif %}
+				<li class="active">{{meta.title}}</li>
+			</ol>
+		</div>
+	</header>
+	<div class="container">
+		<div class="row">
+			{% if meta.thumbnail %}
+			<div class="text-center">
+				<img src="{{ meta.thumbnail }}" alt="{{ meta.title }}" class="post-thumbnail" />
+			</div>
+			{% endif %}
+			<div class="markdown">
+				{{ content }}
+			</div>
+		</div>
+	</div>
+	
+	<footer id="footer" class="hidden-print">
+		{% include "footer.html.twig" %}
+	</footer>
+	{% include "script.html.twig" %}
+</body>
+</html>

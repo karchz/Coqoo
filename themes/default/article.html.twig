@@ -1,0 +1,73 @@
+<!-- Single page shows individual blog post -->
+<article>
+	<div class="page-header">
+		<h1>{{ meta.title }}</h1>
+		<hr class="dashed" />
+		<div class="hidden-print">
+			{% if meta.category %}
+				<h3><small><i class="glyphicon glyphicon-flag"></i> <a href="{{ base_url }}/category/{{meta.category}}">{{ meta.category }}</a>&nbsp;{% if meta.date %}&nbsp;|&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar"></span> {{meta.date}}{% endif %}</small></h3>
+			{% endif %}
+			<div class="tags text-right">
+				{% if meta.tags %}Tags :{% endif %}
+				{% for tag in meta.tags %}
+					<a href="{{ base_url }}/tag/{{ tag }}" class="btn btn-default btn-xs">
+						<span class="glyphicon glyphicon-tag"></span>&nbsp;{{ tag }}
+					</a>&nbsp;
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="thumb text-center">
+		{% if meta.thumbnail %}
+			<img src="{{ meta.thumbnail }}" alt="{{ meta.title }}" class="post-thumbnail" />
+		{% endif %}
+	</div>
+	<div class="markdown" data-spy="scroll" data-target="#toc">
+		{{ content }}
+	</div>
+</article>
+<hr />
+<div class="hidden-print">
+	{% if prev_page.title %}
+		<article class="col-md-6 col-sm-12 col-xs-6">
+			<ul class="media-list">
+				<li class="media">
+					<h4 class="media-heading title hidden-xs"><a href="{{prev_page.url}}">{{ prev_page.title|slice(0, 25) }}</a></h4>
+					<a class="pull-left thumbnail text-center" href="{{prev_page.url}}">
+						{% if prev_page.thumbnail %}
+							<img class="media-object" style="max-width: 64px;" src="{{prev_page.thumbnail}}" alt="{{prev_page.title}}">
+						{% endif %}
+						<span><i class="glyphicon glyphicon-chevron-left"></i> Prev</span>
+					</a>
+					<div class="media-body text-left hidden-xs">
+						{% if prev_page.date %}<p><span class="glyphicon glyphicon-calendar"></span> {{prev_page.date}}</p>{% endif %}
+						{{ prev_page.excerpt|length > 50 ? prev_page.excerpt|slice(0, 70) ~ '...' : prev_page.excerpt }}
+					</div>
+				</li>
+				
+			</ul>
+		</article>
+	{% else %}
+		<div class="col-md-6 col-sm-12 col-xs-6"></div>
+	{% endif %}
+	{% if next_page.title %}
+		<article class="col-md-6 col-sm-12 col-xs-6">
+			<ul class="media-list">
+				<li class="media">
+					<h4 class="media-heading text-right title hidden-xs"><a href="{{next_page.url}}">{{ next_page.title|slice(0, 25) }}</a></h4>
+					<a class="pull-right thumbnail text-center" href="{{next_page.url}}">
+						{% if next_page.thumbnail %}
+							<img class="media-object" style="max-width: 64px;" src="{{next_page.thumbnail}}" alt="{{next_page.title}}">
+						{% endif %}
+						<span>Next <i class="glyphicon glyphicon-chevron-right"></i></span>
+					</a>
+					<div class="media-body text-right hidden-xs">
+						{% if next_page.date %}<p><span class="glyphicon glyphicon-calendar"></span> {{next_page.date}}</p>{% endif %}
+						{{ next_page.excerpt|length > 50 ? next_page.excerpt|slice(0, 70) ~ '...' : next_page.excerpt }}
+					</div>
+				</li>
+			</ul>
+		</article>
+	{% endif %}
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,205 @@
+/*=================================*/
+/* Pico Default Theme
+/* By: Gilbert Pellegrom
+/* http: //dev7studios.com
+/*=================================*/
+
+a,button,.btn,input,textarea,.day{
+    -webkit-touch-callout:none!important;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0.2)!important;
+}
+a{
+	cursor: pointer;
+}
+.fa-ul .fa-li{
+	margin-top: 3.355px!important;
+}
+.side-post-title p{
+	overflow-y: hidden;
+	max-height: 40px;
+}
+/* print fix */
+@media print{
+	article{
+		margin-top: -10px!important;
+	}
+}
+/* youtube etc responsive*/
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16/9 ratio */
+	padding-top: 30px; /* IE6 workaround*/
+	height: 0;
+	overflow: hidden;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.bs-old-docs.bread{
+	padding: 7px 20px;
+}
+.bs-old-docs .breadcrumb{
+	margin-bottom:0px;
+}
+.bs-header{
+	margin-top: 50px;
+	background:#303030;
+	padding-bottom: 0px;
+}
+.bs-masthead, .bs-header {
+	color: #E4E4E4;;
+}
+@media only screen and (min-width:991px){
+	.bs-sidebar.affix {
+		position: fixed;
+		top: 60px;
+	}
+}
+
+.navbar-static-top{
+	border-radius: 4px;
+}
+.index{
+	margin-bottom: 60px;
+}
+.block{
+	height: 100%;
+}
+.inline-block{
+	display: inline-block;
+}
+hr.dashed{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	border-top: 1px dashed #eee;
+}
+.media .title{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+.page-header h3{
+	margin-top: 0px;
+}
+
+.thumb img{
+	width: 100%;
+}
+
+.home{
+	margin-top: 20px;
+}
+
+/* Structure Styles
+/*---------------------------------------------*/
+
+body {
+	color:#505050;
+	background-color: #FAFAFA;
+}
+#header {
+	background: #303030;
+	color: #d9d9d9;
+}
+#header .inner{
+	padding: 70px 0 20px;
+}
+#header .subinner{
+	padding: 45px 0;
+}
+#header .breadcrumb{
+	background: transparent;
+}
+#header a { color: #B1B1B1; }
+#header h1 a,
+#header a:hover { color: #6F6F6F; }
+/*#header h1 { 
+	font-weight: bold;
+	margin: 0; 
+	float: left;
+}*/
+
+#header .navbar-default .social-icons,
+#header .navbar-inverse .social-icons{
+	padding-top: 5px;
+	padding-bottom: 3px;
+	padding-right: 15px;
+
+}
+#header .navbar-default .social-icons a {
+	color: #494949;
+}
+#header .navbar-default .social-icons a:hover{
+	text-decoration: none;
+	color: #787878;
+}
+.navbar-inverse {
+	border-color: #373737;
+}
+#sidebar{
+	padding-top: 20px;
+}
+#footer {
+	background: #3a3a3a;
+	padding: 60px 0;
+	margin-top: 80px;
+	color: #C0C0C0;
+}
+#footer a { color: #ddd; }
+#footer a:hover { color: #fff; }
+
+.bs-sidebar .nav .nav .nav>li>a,.bs-sidebar .nav .nav .nav>li>a:focus{
+	padding-left: 40px;
+}
+.bs-sidebar .nav .nav .nav>.active>a,.bs-sidebar .nav .nav .nav>.active>a:hover{
+	padding-left: 37px;
+}
+.bs-sidebar .nav .nav .nav>li>a:hover{
+	padding-left: 39px;
+}
+.panel {
+	margin-bottom: 0px;
+}
+@media only screen and (max-width:991px){
+	.featurette-heading .text-muted{
+		color: #999;
+		display: block;
+		font-size: 20px;
+		text-indent: 3px;
+	}
+}
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: #707070;
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#707070), to(#6B6B6B));
+	background-image: -webkit-linear-gradient(top, #707070, 0%, #6B6B6B, 100%);
+	background-image: -moz-linear-gradient(top, #707070 0%, #6B6B6B 100%);
+	background-image: linear-gradient(to bottom, #707070 0%, #6B6B6B 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff707070', endColorstr='#ff6B6B6B', GradientType=0);
+	color:#fff!important;
+}
+
+@media only screen and (min-width:1200px) {
+	.col-md-4 .affix{
+		width: 360px;
+		top: 95px;
+	}
+}
+@media only screen and (max-width:1199px) and (min-width:992px) {
+	.col-md-4 .affix{
+		width: 293px;
+		top:60px;
+	}
+}
+

@@ -1,0 +1,104 @@
+<div class="">
+	<h4 class="text-center">Newest Posts</h4>
+	<hr />
+	<ul class="nav">
+	{% for item in all_pages|slice(0, 5) %}
+		<li>
+			<div class="">
+				<div class="col-xs-4 text-center">
+					{% if item.thumbnail %}
+					<a href="{{item.url}}" class="thumbnail">
+						<img class="img-responsive" src="{{item.thumbnail}}">
+					</a>
+					{% endif %}
+				</div>
+				<div class="col-xs-8">	
+					<span><i class="glyphicon glyphicon-calendar"></i>&nbsp;{{item.date|split(' ')[0]}}</span><br />
+					<span><i class="glyphicon glyphicon-flag"></i>&nbsp;{{item.category}}</span>
+					<a href="{{item.url}}" class="side-post-title">
+						<p>{{ item.title|length > 50 ? item.title|slice(0, 50) ~ '...' : item.title  }}</p>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>	
+			<hr class="clearfix dashed" />
+		</li>
+	{% endfor %}
+	</ul>
+</div>
+{% if is_front_page == false %}
+<div id="sidenav" class="bs-sidebar hidden-sm hidden-xs">
+	<h4 class="text-center">{{ meta.title }}</h4>
+	<hr />
+	<div id="ass"></div>
+</div>
+{% endif %}
+
+
+<!--Ranking show -->
+<!--
+{% if rank %}
+<div class="bs-sidenav">
+	<h4 class="text-center">Popular Posts</h4>
+	<hr />
+	<ul class="nav">
+	{% for item in rank|slice(0, 5) %}
+		<li>
+			<div class="">
+				<div class="col-xs-4 text-center">
+					{% if item.thumbnail %}
+					<a href="{{item.url}}" class="thumbnail">
+						<img class="img-responsive" src="{{item.thumbnail}}">
+					</a>
+					{% endif %}
+				</div>
+				<div class="col-xs-8">	
+					<span><i class="glyphicon glyphicon-calendar"></i>&nbsp;{{item.date|split(' ')[0]}}</span><br />
+					<span><i class="glyphicon glyphicon-flag"></i>&nbsp;{{item.category}}</span>
+					<a href="{{item.url}}" class="">
+						<p>{{ item.title|length > 50 ? item.title|slice(0, 50) ~ '...' : item.title  }}</p>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+				<div class="clearfix"></div>
+			</div>	
+			<hr class="clearfix dashed" />
+		</li>
+	{% endfor %}
+	</ul>
+</div>
+{% endif %}
+-->
+<!--Same Cateogory show -->
+<!--
+{% if same_category %}
+	<div class="bs-sidenav">
+		<h4 class="text-center">Same Category</h4>
+		<hr />
+		<ul class="nav">
+		{% for item in same_category|slice(0, 5) %}
+			<li>
+				<div class="">
+					<div class="col-xs-4 text-center">
+					{% if item.thumbnail %}
+					<a href="{{item.url}}" class="thumbnail">
+							<img class="img-responsive" src="{{item.thumbnail}}">
+						</a>
+						{% endif %}
+					</div>
+					<div class="col-xs-8">	
+						<span><i class="glyphicon glyphicon-calendar"></i>&nbsp;{{item.date|split(' ')[0]}}</span><br />
+						<span><i class="glyphicon glyphicon-flag"></i>&nbsp;{{item.category}}</span>
+						<a href="{{item.url}}" class="">
+							<p>{{ item.title|length > 50 ? item.title|slice(0, 50) ~ '...' : item.title  }}</p>
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>	
+				<hr class="clearfix dashed" />
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+{% endif %}
+-->

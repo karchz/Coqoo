@@ -1,0 +1,110 @@
+<script src="{{ theme_url }}/assets/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="{{ theme_url }}/assets/js/jquery.assy.min.js"></script>
+<script src="{{ theme_url }}/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="{{ theme_url }}/assets/js/bootstrap/application.js"></script>
+<script src="{{ theme_url }}/assets/js/bootstrap/holder.js"></script>
+<script src="{{ theme_url }}/assets/js/smooth-scroll/smoothScroll.js"></script>
+<script src="{{ theme_url }}/assets/js/google-code-prettify/prettify.js"></script>
+<script src="{{ theme_url }}/assets/js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="{{ theme_url }}/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+<script src="{{ theme_url }}/assets/js/fancybox/helpers/jquery.fancybox-media.js"></script>
+
+<!-- SyntaxHighlighter -->
+<script type="text/javascript" src="{{ theme_url }}/assets/js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="{{ theme_url }}/assets/js/syntaxhighlighter/shAutoloader.js"></script>
+<script type="text/javascript" src="{{ theme_url }}/assets/js/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.autoloader(
+		"bash					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushBash.js",
+		"css					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushCss.js",
+		"diff					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushDiff.js",
+		"html xml xhtml			{{ theme_url }}/assets/js/syntaxhighlighter/shBrushXml.js",
+		"js jscript javascript	{{ theme_url }}/assets/js/syntaxhighlighter/shBrushJScript.js",
+		"perl pl				{{ theme_url }}/assets/js/syntaxhighlighter/shBrushPerl.js",
+		"php					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushPhp.js",
+		"plain					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushPlain.js",
+		"python py 				{{ theme_url }}/assets/js/syntaxhighlighter/shBrushPython.js",
+		"sql					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushSql.js",
+		"tt tt2					{{ theme_url }}/assets/js/syntaxhighlighter/shBrushTT2.js",
+		"yaml yml				{{ theme_url }}/assets/js/syntaxhighlighter/shBrushYAML.js"
+	);
+	SyntaxHighlighter.all();
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	
+	$(function(){
+		var ass = $("#ass").assy({
+								selectors: "h2, h3, h4",
+								extendPage:false,
+								scrollTo:50,
+								context:".markdown",
+								navClass:"bs-sidenav"
+							});
+
+		$('#sidenav').affix({
+			offset: {
+				top: 830, 
+				bottom: function () {
+					return (this.bottom = $('.bs-footer').outerHeight(true));
+				}
+			}
+		});
+		
+
+		$('*[data-toggle="popover"]').popover();
+		
+		$("a[href^='http']").not("a[href*='"+location.hostname+"']").attr("target","_blank");
+
+		
+		$('.load-fade').map(function(i){
+			var $this = $(this);
+			setTimeout(function(){
+				$this.addClass('in');
+			},500*(i+1));
+		})
+		
+
+		$('#tagSearch').submit(function(e){
+			e.preventDefault();
+			location.href="{{ base_url }}/tag/"+$('#tags').val();
+		});
+
+		$('.markdown').find('iframe,object,embed').wrap('<div class="embed-container"></div>')
+		
+
+		/*fancybox on load*/
+		var media = ['www.youtube.com','vimeo.com','www.metacafe.com','www.dailymotion.com','twitvid.com','twitpic.com','instagr.am','maps.google.com'];
+		$('.markdown').find('img').map(function(){
+			$(this).wrap('<a class="fancybox thumbnail" rel="group" href="'+$(this).attr('src')+'" title="'+$(this).attr('alt')+'"></a>');
+		});
+		$('.markdown').find('a').map(function(){
+			for(var i in media){
+				if($(this).attr('href').indexOf(media[i]) != -1){
+					$(this).addClass('fancybox').attr('rel','group');
+				}
+			}
+		});
+		
+		$(".fancybox").fancybox({
+			prevEffect	: 'fade',
+			nextEffect	: 'fade',
+			openEffect	: 'elastic',
+			closeEffect	: 'elastic',
+			helpers:  {
+				thumbs : {
+					width: 50,
+					height: 50
+				},
+				media : {},
+				title : {
+					type : 'inside'
+				}
+			},
+		});
+		prettyPrint();
+	});
+
+	window.addEventListener("load", function() {
+		setTimeout(scrollBy, 100, 0, 1);
+	}, false);
+
+</script>

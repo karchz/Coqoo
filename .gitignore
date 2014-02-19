@@ -14,11 +14,6 @@ Icon?
 Thumbs.db
 *.swp
 
-# User themes
-themes/*
-!themes/index.html
-!themes/default/*
-
 # User config
 config.php
 
