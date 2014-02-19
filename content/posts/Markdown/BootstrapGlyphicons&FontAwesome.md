@@ -608,7 +608,7 @@
 **Input** `:(fa|youtube-square,lg):`
 
 	```html,1,[0],Output
-	<span class="glyphicon glyphicon-headphones fa-lg fa-spin"></span>
+	<span class="fa fa-youtube-square fa-lg fa-spin"></span>
 	```
 
 `:(IconPrefixClass|IconName,FontaweSomeOptions...):`
