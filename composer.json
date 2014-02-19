@@ -1,0 +1,23 @@
+{
+    "name": "geeks-dev/coqoo",
+    "type": "library",
+    "description": "Coqoo is a flat file CMS, this means there is no administration backend and database to deal with. You simply create .md files in the \"content\" folder and that becomes a page.",
+    "keywords": ["cms"],
+    "homepage": "http://coqoo.net",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gilbert Pellegrom",
+            "email": "gilbert@pellegrom.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "twig/twig": "1.12.*",
+        "michelf/php-markdown": "1.3",
+        "geeks-dev/php-markdown-extra-extended-stylish": "dev-master",
+        "monolog/monolog": ">=1.0.0"
+    },
+    "autoload": {
+    }
+}

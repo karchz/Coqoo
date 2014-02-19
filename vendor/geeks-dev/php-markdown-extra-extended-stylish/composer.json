@@ -1,0 +1,14 @@
+{
+    "name": "geeks-dev/php-markdown-extra-extended-stylish",
+    "type": "library",
+    "description": "PHP Markdown Extra Extended Stylish",
+    "homepage": "https://github.com/geeks-dev/php-markdown-extra-extended-stylish",
+    "keywords": ["markdown"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "files": ["markdown.php", "markdown_extended_stylish.php"]
+    }
+}
