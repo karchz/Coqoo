@@ -43,3 +43,9 @@ Coqooは現存するPHPマークダウンパーサの中でも最も先進的で
 - Icon List
 
 [こちらのデモ](http://demo.geeks-dev.com/markdown_e2_stylish/demo/)でお試し頂けます。  
+
+PHP5.5 で動作確認済み  
+PHP5.4以下は`composer.json`に"rhumsaa/array_column": "~1.1"を追加すると良いかもしれません。  
+それができない場合は`plugin`内の`Coqoo-Logs-Plugin`を削除してください。  
+削除した場合は人気記事が取得できなくなります。  
+
