@@ -506,13 +506,13 @@ class Coqoo extends Pico{
                     'date' => isset($page_meta['date']) ? $page_meta['date'] : '',
                     'date_formatted' => isset($page_meta['date']) ? date($config['date_format'], strtotime($page_meta['date'])) : '',
                     'content' => $page_content,
-                    'excerpt' => $this->limit_words(strip_tags($page_content), $excerpt_length)
+                    'excerpt' => $this->limit_words(strip_tags($page_content), $config["excerpt_length"])
             );
 
             // Extend the data provided with each page by hooking into the data array
             $this->run_hooks('get_page_data', array(&$data, $page_meta));
 
-            if($order_by == 'date' && isset($page_meta['date'])){
+            if($config["pages_order_by"] == 'date' && isset($page_meta['date'])){
                 $sorted_pages[$page_meta['date'].$date_id] = $data;
                 $date_id++;
             }
@@ -521,14 +521,14 @@ class Coqoo extends Pico{
             
         }
         
-        if($order == 'desc') krsort($sorted_pages);
+        if($config['pages_order'] == 'desc') krsort($sorted_pages);
         else ksort($sorted_pages);
 
 		header($_SERVER['SERVER_PROTOCOL'].' 200 OK');
 		header('Content-Type: application/xml; charset=UTF-8');
 		$xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 		foreach( $sorted_pages as $page ){
-			$xml .= '<url><loc>'.$page['url'].'</loc></url>';
+			$xml .= '<url><loc>'.htmlspecialchars($page['url']).'</loc></url>';
 		}	
 		$xml .= '</urlset>';
 		header('Content-Type: text/xml');
