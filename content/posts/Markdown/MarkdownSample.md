@@ -62,20 +62,20 @@ How to Markdown .
 ## Code
 
 ### Normal
-	
-	<html>
-		<head>
-			<link rel="stylesheet" href="css.css">
-			<style src="js.js"></style>
-		</head>
-		<body>
-			<article>
-				<h2>Example</h2>
-				<p>content</p>
-			</article>
-		</body>
-	</html>
-
+```	
+<html>
+	<head>
+		<link rel="stylesheet" href="css.css">
+		<style src="js.js"></style>
+	</head>
+	<body>
+		<article>
+			<h2>Example</h2>
+			<p>content</p>
+		</article>
+	</body>
+</html>
+```
 ### Syntax Highlighter
 	
 
@@ -150,33 +150,33 @@ How to Markdown .
 
 ## Strong
 
-	 **Strong** 
+	`**Strong** `
 
 **Strong** 
 
 ## Italic
 
-	*Italic* 
+	`*Italic*` 
 
 *Italic*
 
 ## Italic And Strong
 
-	***Italic & Strong***
+	`***Italic & Strong***`
 
 ***Italic & Strong***
 
 ## Anchor Link
 
-	[geeks-dev](http://www.geeks-dev.com/)
+	`[geeks-dev](http://www.geeks-dev.com/)`
 
 [geeks-dev](http://www.geeks-dev.com/)
 
 or
-
-	[geeks-dev]: http://www.geeks-dev.com/	"geeks-dev"
-	[Test][geeks-dev]
-
+```
+[geeks-dev]: http://www.geeks-dev.com/	"geeks-dev"
+[Test][geeks-dev]
+```
 [geeks-dev]: http://www.geeks-dev.com/	"geeks-dev"
 [Website][geeks-dev]
 
